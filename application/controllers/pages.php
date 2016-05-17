@@ -1,11 +1,15 @@
 <?php
   class Pages extends CI_Controller{
 
-    function _construct(){
-      parent::_construct();
+    function __construct(){
+      parent::__construct();
     }
 
     function index(){
       $this->load->view('pages/index');
+    }
+
+    function portofolio(){
+      $this->load->view('pages/portofolio');
     }
   }
