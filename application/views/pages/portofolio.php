@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>public/assets/mobirise/css/style.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>public/assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="<?php echo base_url() ?>public/assets/grid/grid.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>public/assets/cubeportofolio/cubeportofolio.min.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>public/assets/cubeportofolio/fonts-awesome.css" type="text/css">
 </head>
 
 <body>
@@ -30,11 +32,11 @@
                     <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
                         <div class="mbr-navbar__column">
                           <ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active mbr-buttons--only-links">
-                            <li class="mbr-navbar__item"><?php echo anchor('/','Home',array('class'=>'mbr-buttons__link btn text-white')); ?></li>
-                            <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#about">About Us</a></li>
-                            <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#whyus">Why Us</a></li>
+                            <li class="mbr-navbar__item"><?php echo anchor('/','Beranda',array('class'=>'mbr-buttons__link btn text-white')); ?></li>
+                            <li class="mbr-navbar__item"><?php echo anchor('/#about','Tentang Kami',array('class'=>'mbr-buttons__link btn text-white')); ?></li>
+                            <li class="mbr-navbar__item"><?php echo anchor('/#whyus','Kenapa Kami',array('class'=>'mbr-buttons__link btn text-white')); ?></li>
                             <li class="mbr-navbar__item"><?php echo anchor('pages/portofolio','Portofolio',array('class'=>'mbr-buttons__link btn text-white')); ?></li>
-                            <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#contact">Contact</a></li>
+                            <li class="mbr-navbar__item"><?php echo anchor('/#contact','Kontak',array('class'=>'mbr-buttons__link btn text-white')); ?></li>
                           </ul>
                         </div>
                     </nav>
@@ -44,47 +46,59 @@
     </div>
 </section>
 
-<section class="engine"><a rel="external" href="">mac website builder</a></section>
+<section class="engine"><a rel="external" href=""></a></section>
 <section class="mbr-section mbr-section--relative mbr-section--short-paddings mbr-after-navbar" id="msg-box2-10" style="background-color: rgb(255, 255, 255);">
 </section>
 
 <!-- Gallery -->
+<div class="wb-grid">
+<div class="wb-center">
 <div class="grid">
-  <div class="grid-sizer"></div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+  <div id="js-filters-masonry" class="cbp-l-filters-alignRight">
+    <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+      All
+    </div>
+    <?php if($showK): ?>
+      <?php foreach($showK as $L): ?>
+    <div data-filter=".<?php echo $L['kategori'] ?>" class="cbp-filter-item">
+        <?php if($L['kategori']=='WebDevelopment'){ echo 'Web Development';}elseif ($L['kategori']=='GraphicDesign'){ echo 'Graphic Design';}elseif ($L['kategori']=='PreWedding') { echo 'Pre Wedding';}elseif ($L['kategori']=='Wedding') { echo 'Wedding';}else{ echo 'BTS';}
+        ?>
+    </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
   </div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+  <div id="js-grid-masonry" class="cbp">
+    <?php if($showP): ?>
+      <?php foreach($showP as $P): ?>
+    <div class="cbp-item <?php echo $P['kategori'] ?>">
+        <a href="<?php echo base_url() ?>public/assets/upload/portofolio/<?php echo $P['gambar_porto'] ?>" class="cbp-caption cbp-lightbox" data-title="<?php echo $P['judul_porto'] ?><br><?php echo $P['tagline'] ?>">
+            <div class="cbp-caption-defaultWrap">
+                <img src="<?php echo base_url() ?>public/assets/upload/portofolio/<?php echo $P['gambar_porto'] ?>" alt="">
+            </div>
+            <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                    <div class="cbp-l-caption-body">
+                        <div class="cbp-l-caption-title"><?php echo $P['judul_porto'] ?></div>
+                        <div class="cbp-l-caption-desc"><?php echo $P['tagline'] ?></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
   </div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
-  </div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
-  </div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
-  </div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
-  </div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
-  </div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
-  </div>
-  <div class="grid-item">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
-  </div>
+</div>
+</div>
 </div>
 
   <script src="<?php echo base_url() ?>public/assets/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>public/assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="<?php echo base_url() ?>public/assets/masonry/masonry.pkgd.js"></script>
-  <script src="<?php echo base_url() ?>public/assets/imagesloaded/imagesloaded.pkgd.js"></script>
-  <script src="<?php echo base_url() ?>public/assets/grid/grid.js"></script>
+  <script src="<?php echo base_url() ?>public/assets/cubeportofolio/jquery.cubeportofolio.min.js"></script>
+  <script src="<?php echo base_url() ?>public/assets/cubeportofolio/main.js"></script>
+  <script src="<?php echo base_url() ?>public/assets/smooth-scroll/SmoothScroll.js"></script>
+  <script src="<?php echo base_url() ?>public/assets/jarallax/jarallax.js"></script>
+  <script src="<?php echo base_url() ?>public/assets/mobirise/js/script.js"></script>
 
 </body>
 </html>

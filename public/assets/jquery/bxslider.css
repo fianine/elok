@@ -1,0 +1,14 @@
+/** Header Banner **/
+#banner_slider{ width:100%; margin:0; padding:0;}
+#banner_slider li img{ width:100%; height:499px;height: 570px;margin-top: 97px;}
+#banner_slider li { position:relative !important;}
+#banner_slider li div{ position:absolute; left:19.4%; top:60%; font-size:48px; line-height:60px; color:#ffffff; font-family: 'Open Sans', sans-serif; max-width:80% !important;}
+#banner_slider li div  p{ padding:10px 15px; overflow:hidden; margin-bottom:0; display:inline-block; clear:both;}
+#banner_slider li div .b_dark{ background:rgb(27,27,27); background:rgba(27,27,27,0.90); }
+#banner_slider li div .b_green{ background:rgb(31,185,191); background:rgba(31,185,191,0.90); margin-top:-11px;}
+.banner_slider .bx-default-pager{ display:none;}
+.banner_slider{ position:relative;}
+.banner_slider .bx-controls-direction{ position:absolute; right:19.3%; top:83%; max-width:90%;}
+.banner_slider .bx-controls-direction a{ background-image:url('http://localhost/elok/public/assets/images/t_slider_nav.png'); display:inline-block; width:28px; height:28px; overflow:hidden; text-indent:-5000px; }
+.banner_slider .bx-controls-direction a.bx-next{ background-position: 28px 0;}
+.banner_slider .bx-controls-direction a.bx-prev{ background-position: 0 0;}
